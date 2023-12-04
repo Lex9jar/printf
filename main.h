@@ -4,6 +4,7 @@
 /* = = = = = HEADERS = = = = = */
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /* = = = = = MACROS = = = = = */
 #define BUFFER_SIZE 1024
@@ -20,12 +21,12 @@ typedef struct node
 int _printf(const char *format, ...);
 int _putchar(char c);
 void empty_buffer(char buffer[], int *size);
-int fmt_n_print(const char *format, int spc_idx, va_list arg_ptr);
+int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr);
 
 int print_char(va_list arg_ptr);
 int print_string(va_list arg_ptr);
 int print_percent(va_list arg_ptr);
 
-int _strlen(char c);
+int _strlen(char *str);
 
 #endif /* _MAIN_H_ */
