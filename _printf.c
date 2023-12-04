@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			empty_buffer(buffer, &buf_idx);
 			i++;
-			printed = fmt_n_print(format, &i, arg_ptr);
+			printed = fmt_n_print(format, &i, arg_ptr, buffer);
 			if (printed == -1)
 				return (-1);
 			char_counter += printed;
