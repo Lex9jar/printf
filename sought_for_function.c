@@ -4,7 +4,7 @@
  * fmt_n_print - Sought for a function for a particular specifier.
  * @format: Format string to get specifier.
  * @spc_idx: Index number of specifier in format.
- * @arg_ptr: Argument pointer.
+ * @arg_ptr: Argument pointer
  *
  * Return: printed number of characters from a function.
  */
