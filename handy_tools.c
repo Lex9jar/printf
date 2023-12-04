@@ -9,7 +9,8 @@
  */
 void empty_buffer(char buffer[], int *size)
 {
-	write(1, &buffer[0], *size);
+	if (*size > 0)
+		write(1, &buffer[0], *size);
 
 	*size = 0;
 }
