@@ -11,10 +11,9 @@
 int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr)
 {
 	store fetch[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'\0', NULL}
+		{'c', print_char}, {'s', print_string},
+		{'%', print_percent}, {'d' print_int},
+		{'i', print_int}, {'\0', NULL}
 	};
 	int i = 0;
 
