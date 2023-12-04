@@ -2,7 +2,7 @@
 
 /**
  * _putchar - writes a character tot eh stdout.
- * @c: Character to print.
+ * @c: Character to print
  *
  * Return: On success 1,
  * On error -1, and errno is set appropriately.
