@@ -11,8 +11,6 @@ int print_char(va_list arg_ptr)
 {
 	char c = va_arg(arg_ptr, int);
 
-	if (c == '')
-		return (-1);
 	return (_putchar(c));
 }
 
@@ -24,12 +22,16 @@ int print_char(va_list arg_ptr)
  */
 int print_string(va_list arg_ptr)
 {
+	int i = 0, len = 0;
 	char *s = va_arg(arg_ptr, char *);
 
 	if (s == NULL)
 		s = "(null)";
 
-	return (write(1, &s[0], _strlen(s)));
+	for (i = 0; s[i]; i++)
+		len += _putchar(s[i]);
+
+	return (len);
 }
 
 /**
@@ -43,5 +45,5 @@ int print_percent(va_list arg_ptr)
 {
 	UNUSED(arg_ptr);
 
-	return(write(1, "%%",1));
+	return (_putchar('%'));
 }
