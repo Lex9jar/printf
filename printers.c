@@ -3,6 +3,7 @@
 /**
  * print_char - Writes a character to the stdout
  * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
  *
  * Return: On success 1,
  * On error -1, and errno is set appropriately.
@@ -19,6 +20,7 @@ int print_char(va_list arg_ptr, char buffer[])
 /**
  * print_string - Prints a null terminated string
  * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
  *
  * Return: Number of characters printed.
  */
@@ -40,6 +42,7 @@ int print_string(va_list arg_ptr, char buffer[])
 /**
  * print_percent - Prints a percent '%' sign
  * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
  *
  * Return: On success 1,
  * On error -1, and errno is set appropriately.
@@ -55,6 +58,7 @@ int print_percent(va_list arg_ptr, char buffer[])
 /**
  * print_int - format and prints an int value
  * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
  *
  * Return: Number of characters printed.
  */
