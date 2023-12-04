@@ -5,10 +5,12 @@
  * @format: Format string to get specifier.
  * @spc_idx: Index number of specifier in format.
  * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
  *
  * Return: printed number of characters from a function.
  */
-int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr, char buffer[])
+int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
+		char buffer[])
 {
 	store fetch[] = {
 		{'c', print_char}, {'s', print_string},
