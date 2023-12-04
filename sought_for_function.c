@@ -8,7 +8,7 @@
  *
  * Return: printed number of characters from a function.
  */
-int fmt_n_print(const char *format, int spc_idx, va_list arg_ptr)
+int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr)
 {
 	store fetch[] = {
 		{'c', print_char},
@@ -19,8 +19,12 @@ int fmt_n_print(const char *format, int spc_idx, va_list arg_ptr)
 	int i = 0;
 
 	while (fetch[i].c)
-		if (fetch[i].c == format[spc_idx])
+	{
+		if (fetch[i].c == format[*spc_idx])
 			return (fetch[i].func(arg_ptr));
+		i++;
+	}
 
+	va_end(arg_ptr);
 	return (-1);
 }
