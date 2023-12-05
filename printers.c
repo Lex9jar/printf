@@ -10,11 +10,13 @@
  */
 int print_char(va_list arg_ptr, char buffer[])
 {
+	int i = BUFFER_SIZE - 2;
 	char c = va_arg(arg_ptr, int);
 
-	UNUSED(buffer);
+	buffer[BUFFER_SIZE - 1] = '\0';
+	buffer[i] = c;
 
-	return (_putchar(c));
+	return (_putchar(buffer[i]));
 }
 
 /**
@@ -49,10 +51,13 @@ int print_string(va_list arg_ptr, char buffer[])
  */
 int print_percent(va_list arg_ptr, char buffer[])
 {
-	UNUSED(arg_ptr);
-	UNUSED(buffer);
+	char c = '%';
+	i = BUFFER_SIZE - 2;
 
-	return (_putchar('%'));
+	buffer[BUFFER_SIZE - 1] = '\0';
+	buffer[i] = c;
+
+	return (_putchar(buffer[i]));
 }
 
 /**
@@ -67,13 +72,13 @@ int print_int(va_list arg_ptr, char buffer[])
 	int i, len, neg_flg = 0;
 	int num = va_arg(arg_ptr, int);
 
-	buffer[BUFFER_SIZE - 1] = '\0';
 	if (num < 0)
 	{
 		neg_flg = 1;
 		num *= -1;
 	}
 
+	buffer[BUFFER_SIZE - 1] = '\0';
 	i = BUFFER_SIZE - 2;
 	if (num == 0)
 		buffer[i--] = '0';
@@ -82,13 +87,14 @@ int print_int(va_list arg_ptr, char buffer[])
 		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
-
 	if (neg_flg)
 		buffer[i--] = '-';
-	len = BUFFER_SIZE - i - 1;
 	i++;
-	len--;
-	return (write(1, &buffer[i], len));
+
+	for (j = i; buffer[j]; i++)
+		count += _putchar(buffer[j]);
+
+	return (count);
 }
 
 /**
