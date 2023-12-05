@@ -52,8 +52,9 @@ int print_string(va_list arg_ptr, char buffer[])
 int print_percent(va_list arg_ptr, char buffer[])
 {
 	char c = '%';
-	i = BUFFER_SIZE - 2;
+	int i = BUFFER_SIZE - 2;
 
+	UNUSED(arg_ptr);
 	buffer[BUFFER_SIZE - 1] = '\0';
 	buffer[i] = c;
 
@@ -69,7 +70,7 @@ int print_percent(va_list arg_ptr, char buffer[])
  */
 int print_int(va_list arg_ptr, char buffer[])
 {
-	int i, len, neg_flg = 0;
+	int i, j, count = 0, neg_flg = 0;
 	int num = va_arg(arg_ptr, int);
 
 	if (num < 0)
@@ -91,7 +92,7 @@ int print_int(va_list arg_ptr, char buffer[])
 		buffer[i--] = '-';
 	i++;
 
-	for (j = i; buffer[j]; i++)
+	for (j = i; buffer[j]; j++)
 		count += _putchar(buffer[j]);
 
 	return (count);
