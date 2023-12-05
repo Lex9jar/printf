@@ -75,6 +75,8 @@ int print_int(va_list arg_ptr, char buffer[])
 	}
 
 	i = BUFFER_SIZE - 2;
+	if (num == 0)
+		buffer[i--] = '0';
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
@@ -105,6 +107,8 @@ int print_binary(va_list arg_ptr, char buffer[])
 
 	UNUSED(buffer);
 	n = va_arg(arg_ptr, unsigned int);
+	if (n == 0)
+		arr[input++] = 0;
 	while (n > 0)
 	{
 		arr[input++] = n % 2;
