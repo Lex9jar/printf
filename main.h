@@ -28,6 +28,7 @@ int print_char(va_list arg_ptr, char buffer[]);
 int print_string(va_list arg_ptr, char buffer[]);
 int print_percent(va_list arg_ptr, char buffer[]);
 int print_int(va_list arg_ptr, char buffer[]);
+int print_binary(va_list arg_ptr, char buffer[]);
 
 /* HANDY TOOLS */
 int _strlen(char *str);
