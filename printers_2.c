@@ -21,7 +21,7 @@ int print_String(va_list arg_ptr, char buffer[])
 
 	while (str[i])
 	{
-		if (str[i] > 32 && str [i] < 127)
+		if (str[i] > 32 && str[i] < 127)
 			buffer[j++] = str[i];
 		else
 		{
