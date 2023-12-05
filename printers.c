@@ -88,3 +88,34 @@ int print_int(va_list arg_ptr, char buffer[])
 	len--;
 	return (write(1, &buffer[i], len));
 }
+
+/**
+ * print_binary - formats and print a binary value
+ * @arg_ptr: Argument pointer
+ * @buffer: Buffer for formatting and printing
+ *
+ * Return: Number of characters printed.
+ */
+int print_binary(va_list arg_ptr, char buffer[])
+{
+	unsigned int  n;
+	unsigned int arr[32];
+	int input = 0, output, count = 0;
+	char byte;
+
+	UNUSED(buffer);
+	n = va_arg(arg_ptr, unsigned int);
+	while (n > 0)
+	{
+		arr[input++] = n % 2;
+		n /= 2;
+	}
+
+	for (output = input - 1; output >= 0; output--)
+	{
+		byte = arr[output] + '0';
+		count += _putchar(byte);
+	}
+
+	return (count);
+}
