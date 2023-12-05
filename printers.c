@@ -10,8 +10,9 @@
  */
 int print_char(va_list arg_ptr, char buffer[])
 {
-	UNUSED(buffer);
 	char c = va_arg(arg_ptr, int);
+
+	UNUSED(buffer);
 
 	return (_putchar(c));
 }
@@ -25,10 +26,10 @@ int print_char(va_list arg_ptr, char buffer[])
  */
 int print_string(va_list arg_ptr, char buffer[])
 {
-	UNUSED(buffer);
 	int i = 0, len = 0;
 	char *s = va_arg(arg_ptr, char *);
 
+	UNUSED(buffer);
 	if (s == NULL)
 		s = "(null)";
 
@@ -99,12 +100,12 @@ int print_int(va_list arg_ptr, char buffer[])
  */
 int print_binary(va_list arg_ptr, char buffer[])
 {
-	UNUSED(buffer);
-	unsigned int  n;
+	unsigned int n;
 	unsigned int arr[32];
 	int input = 0, output, count = 0;
 	char byte;
 
+	UNUSED(buffer);
 	n = va_arg(arg_ptr, unsigned int);
 	if (n == 0)
 		arr[input++] = 0;
