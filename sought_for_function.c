@@ -15,7 +15,8 @@ int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
 	store fetch[] = {
 		{'c', print_char}, {'s', print_string},
 		{'%', print_percent}, {'d', print_int},
-		{'i', print_int}, {'\0', NULL}
+		{'i', print_int}, {'b', print_binary},
+		{'\0', NULL}
 	};
 	int i = 0;
 
