@@ -63,7 +63,7 @@ int print_octal(va_list arg_ptr, char buffer[])
 }
 
 /**
- * print_lowHex - Prints an unsigned int in lowercase Hexa
+ * print_lowerHex - Prints an unsigned int in lowercase Hexa
  * @arg_ptr: Argument pointer
  * @buffer: Buffer for formatting and printing
  *
