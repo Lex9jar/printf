@@ -29,6 +29,10 @@ int print_string(va_list arg_ptr, char buffer[]);
 int print_percent(va_list arg_ptr, char buffer[]);
 int print_int(va_list arg_ptr, char buffer[]);
 int print_binary(va_list arg_ptr, char buffer[]);
+int print_unsigned_int(va_list arg_ptr, char buffer[]);
+int print_octal(va_list arg_ptr, char buffer[]);
+int print_lowerHex(va_list arg_ptr, char buffer[]);
+int print_upperHex(va_list arg_ptr, char buffer[]);
 
 /* HANDY TOOLS */
 int _strlen(char *str);
