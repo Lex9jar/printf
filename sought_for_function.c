@@ -22,7 +22,7 @@ int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
 		{'r', print_reverse}, {'R', print_in_ROT13},
 		{'\0', NULL}
 	};
-	int i = 0;
+	int i = 0i, count = 0;
 
 	while (fetch[i].c)
 	{
@@ -31,6 +31,17 @@ int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
 		i++;
 	}
 
-	va_end(arg_ptr);
+	if (fetch[i].c == '\0')
+	{
+		if (format[*spc_idx] == '\0')
+			return (-1);
+
+		count += _putchar('%');
+		if (format[*spc_idx - 1] == ' ')
+			count += _putchar(' ');
+		count += _putchar(format[*spc_idx]);
+		return (count);
+	}
+
 	return (-1);
 }
