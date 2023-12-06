@@ -19,7 +19,7 @@ int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
 		{'u', print_unsigned_int}, {'o', print_octal},
 		{'x', print_lowerHex}, {'X', print_upperHex},
 		{'S', print_String}, {'p', print_pointer},
-		{'\0', NULL}
+		{'r', print_reverse}, {'\0', NULL}
 	};
 	int i = 0;
 
