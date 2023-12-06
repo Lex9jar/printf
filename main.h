@@ -36,6 +36,7 @@ int print_upperHex(va_list arg_ptr, char buffer[]);
 int print_String(va_list arg_ptr, char buffer[]);
 int print_pointer(va_list arg_ptr, char buffer[]);
 int print_reverse(va_list arg_ptr, char buffer[]);
+int print_in_ROT13(va_list arg_ptr, char buffer[]);
 
 /* HANDY TOOLS */
 int _strlen(char *str);
