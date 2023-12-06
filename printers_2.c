@@ -51,7 +51,7 @@ int print_String(va_list arg_ptr, char buffer[])
  */
 int print_pointer(va_list arg_ptr, char buffer[])
 {
-	void *ptr;
+	void *ptr = va_arg(arg_ptr, void *);
 	char hex_arr[] = "0123456789abcdef";
 	unsigned long num_ptr;
 	int i, j, count = 0;
