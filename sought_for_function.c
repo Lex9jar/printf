@@ -22,7 +22,7 @@ int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr,
 		{'r', print_reverse}, {'R', print_in_ROT13},
 		{'\0', NULL}
 	};
-	int i = 0i, count = 0;
+	int i = 0, count = 0;
 
 	while (fetch[i].c)
 	{
