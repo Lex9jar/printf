@@ -21,7 +21,8 @@ typedef struct node
 int _printf(const char *format, ...);
 int _putchar(char c);
 void empty_buffer(char buffer[], int *size);
-int fmt_n_print(const char *format, int *spc_idx, va_list arg_ptr, char buffer[]);
+int fmt_n_print(const char *format, int *spc_idx,
+		va_list arg_ptr, char buffer[]);
 
 /* PRINT FUNCTIONS */
 int print_char(va_list arg_ptr, char buffer[]);
