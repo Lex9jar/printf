@@ -53,13 +53,13 @@ int print_pointer(va_list arg_ptr, char buffer[])
 {
 	void *ptr = va_arg(arg_ptr, void *);
 	char hex_arr[] = "0123456789abcdef";
-	unsigned long num_ptr = 0;
+	unsigned long num_ptr;
 	int i, j, count = 0;
 
 	if (ptr == NULL)
 		return (write(1, "(nil)", 5));
 
-	buffer[BUFFER_SIZE + 1] = '\0';
+	buffer[BUFFER_SIZE - 1] = '\0';
 	i = BUFFER_SIZE - 2;
 
 	num_ptr = (unsigned long)ptr;
