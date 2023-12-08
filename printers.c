@@ -68,25 +68,28 @@ int print_percent(va_list arg_ptr, char buffer[])
  */
 int print_int(va_list arg_ptr, char buffer[])
 {
-	int i, j, count = 0, neg_flg = 0;
-	int num = va_arg(arg_ptr, int);
+	int i = BUFFER_SIZE - 2, count = 0, neg_flg = 0, j;
+	long int num = va_arg(arg_ptr, long int);
+	unsigned long int num1;
 
+	num1 = (int)num;
+	if (num1 == 0)
+		buffer[i--] = '0';
+
+	num = (unsigned long int)num1;
 	if (num < 0)
 	{
 		neg_flg = 1;
-		num *= -1;
+		num = (unsigned long int)((-1) * num1);
 	}
 
 	buffer[BUFFER_SIZE - 1] = '\0';
-	i = BUFFER_SIZE - 2;
-	if (num == 0)
-		buffer[i--] = '0';
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
-	if (neg_flg)
+	if (neg_flg == 1)
 		buffer[i--] = '-';
 	i++;
 
