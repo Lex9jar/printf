@@ -10,13 +10,11 @@
  */
 int print_char(va_list arg_ptr, char buffer[])
 {
-	int i = BUFFER_SIZE - 2;
 	char c = va_arg(arg_ptr, int);
 
-	buffer[BUFFER_SIZE - 1] = '\0';
-	buffer[i] = c;
+	UNUSED(buffer);
 
-	return (_putchar(buffer[i]));
+	return (_putchar(c));
 }
 
 /**
