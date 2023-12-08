@@ -56,7 +56,6 @@ int print_pointer(va_list arg_ptr, char buffer[])
 	unsigned long num_ptr;
 	int i, j, count = 0;
 
-	ptr = va_arg(arg_ptr, void *);
 	if (ptr == NULL)
 		return (write(1, "(nil)", 5));
 
